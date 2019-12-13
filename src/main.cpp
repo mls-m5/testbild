@@ -7,6 +7,8 @@
 #include "matgui/matgl.h"
 #include <chrono>
 #include <thread>
+#include <unistd.h>
+#include <string>
 
 using namespace std;
 using namespace MatGui;
@@ -18,8 +20,8 @@ int main(int argc, char **argv) {
    const int texW = 768;
    const int texH = 576;
 
-   int width = texW;
-   int height = texH;
+   int width = 1920;// texW;
+   int height = 1200; //texH;
 
    if (argc == 2) {
       if (argv[1] == "--help"s) {
@@ -34,6 +36,12 @@ int main(int argc, char **argv) {
       width = stoi(argv[1]);
       height = stoi(argv[2]);
    }
+
+   string path = argv[0];
+
+   auto found = path.rfind('/');
+
+   chdir(string(path.begin(), path.begin() + found).c_str());
 
    Window window("testbild", width, height);
    window.bordered(false);

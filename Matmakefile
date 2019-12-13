@@ -17,7 +17,7 @@ main.src =
     src/*.cpp
     matgui/src/*.cpp
 
-main.copy += testbild.png indicator.png
+main.copy += testbild.png indicator.png testbild.desktop README.md
 
 main.libs = -lGL -lSDL2 -lSDL2_image
 
