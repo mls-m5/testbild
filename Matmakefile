@@ -1,0 +1,28 @@
+
+# Matmake file
+# https://github.com/mls-m5/matmake
+
+cppflags += -std=c++14      # c++ only flags
+cflags +=                   # c only flags
+
+# global flags:
+flags += -W -Wall -Wno-unused-parameter -Wno-sign-compare #-Werror
+
+## Main target
+main.includes +=
+    include
+    matgui/include
+# main.flags += -g         # extra compiler flags for target
+main.src =
+    src/*.cpp
+    matgui/src/*.cpp
+
+main.copy += testbild.png indicator.png
+
+main.libs = -lGL -lSDL2 -lSDL2_image
+
+main.out = testbild
+
+main.dir = lasersköld-testbild
+#
+
